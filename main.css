@@ -1,0 +1,189 @@
+:root{
+    --bg_color: #090910;
+    --highlight_color: #fb0;
+    --text_color: #fff;
+}
+
+@font-face {
+    font-family: "merienda";
+    font-weight: 400;
+    src: url("fonts/merienda/Merienda-Regular.woff2") format("woff2"),
+         url("fonts/merienda/Merienda-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "merienda";
+    font-weight: 700;
+    src: url("fonts/merienda/Merienda-ExtraBold.woff2") format("woff2"),
+         url("fonts/merienda/Merienda-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "alegreyasans";
+    font-weight: 400;
+    src: url("fonts/merienda/alegreyasans-regular.woff2") format("woff2"),
+         url("fonts/merienda/alegreyasans-regular.woff") format("woff");
+}
+@font-face {
+    font-family: "alegreyasans";
+    font-weight: 700;
+    src: url("fonts/merienda/alegreyasans-bold.woff2") format("woff2"),
+         url("fonts/merienda/alegreyasans-bold.woff") format("woff");
+}
+@font-face {
+    font-family: "alegreyasans";
+    font-weight: 900;
+    src: url("fonts/merienda/alegreyasans-black.woff2") format("woff2"),
+         url("fonts/merienda/alegreyasans-black.woff") format("woff");
+}
+
+html {
+    background: #102020; /*var(--bg_color);*/
+    /*background-image: linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);*/
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "merienda", sans-serif;
+    font-weight: 900;
+    /*background: var(--bg_color);*/
+    background: #507070;
+    /*background: #070708;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2em 2em 4em;*/
+}
+
+.main_grid {
+    display: grid;
+    grid-gap: 5px;
+    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, minmax(70px, auto));
+    
+    max-width: 1700px;
+    margin: auto;   /*Adds margin to both sides when window is too big. Centers itself.*/
+}
+
+.main_grid div {
+    background: var(--bg_color);
+}
+
+
+/*--- Top Bar ------------------------------------------------------------*/
+/*------ Home Button(Image) */
+.top_home {
+    grid-column: 1/3;
+    min-height: 50px;
+    max-height: 70px;
+}
+
+.top_home img {
+    width: auto;
+    max-height: 100%;
+}
+
+
+/*--- Top Bar ------------------------------------------------------------*/
+/*------ Navigation Links */
+.top_nav {
+    grid-column: 3/7;
+    min-height: 50px;
+    max-height: 70px;
+}
+
+.top_nav ul{
+    height: 100%;
+    
+    list-style-type: none;  /*This "hides" the bullet icons.*/
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--bg_color);
+}
+
+.top_nav li{
+    float: right;   /*Align the list elements to the right.*/
+}
+
+.top_nav p {
+    display: block;
+    color: var(--text_color);
+    font-size: 120%;
+    text-align: center;
+    padding: 10px 16px; /*vertical, horizontal*/
+    margin-left: 5px;
+    text-decoration: none;
+    
+    transition: 0.8s;
+}
+
+.top_nav p:hover {
+    background-color: var(--highlight_color);
+    color: var(--bg_color);
+}
+
+
+/*--- Banner -------------------------------------------------------------*/
+.banner_l {
+    grid-column: 1/4; /*Screen's LEFT side*/
+    max-height: 720px;
+}
+
+.banner_l img {
+    max-height: 720px;
+    max-width: 100%;
+    height: auto;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner_r {
+    grid-column: 4/7; /*Screen's RIGHT side*/
+    max-height: 720px;
+}
+
+.banner_r img {
+    max-height: 720px;
+    max-width: 100%;
+    height: auto;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*--- Content -------------------------------------------------------------*/
+.content_1 {
+    grid-column: 1/3;
+    color: var(--text_color);
+}
+
+.content_2 {
+    grid-column: 3/5;
+    color: var(--text_color);
+}
+
+.content_3 {
+    grid-column: 5/7;
+    color: var(--text_color);
+}
+
+
+/*--- Footer -------------------------------------------------------------*/
+.footer {
+    grid-column: 1/7;
+    
+    color: var(--text_color);
+    
+    font-size: 80%;
+    line-height: 1.6;
+    text-align: center;
+}
