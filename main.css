@@ -163,7 +163,7 @@ body {
 /*--- Content -------------------------------------------------------------*/
 .content_1 {
     grid-column: 1/3;
-    color: var(--text_color);
+    color: #6d6dbb;
 }
 
 .content_2 {
