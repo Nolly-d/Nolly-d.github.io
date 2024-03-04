@@ -1,7 +1,7 @@
 :root{
-    --bg_color: #090910;
+    --bg_color: #181510;
     --highlight_color: #fb0;
-    --text_color: #fff;
+    --text_color: #e9dbbd; /*cbb682*/
 }
 
 @font-face {
@@ -44,9 +44,10 @@ html {
 
 body {
     font-family: "merienda", sans-serif;
-    font-weight: 900;
-    /*background: var(--bg_color);*/
-    background: #507070;
+    font-weight: 400;
+    letter-spacing: 1px;
+    background: var(--bg_color);
+    /*background: #507070;*/
     /*background: #070708;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     color: #545454;
@@ -58,12 +59,17 @@ body {
     padding: 2em 2em 4em;*/
 }
 
+
+a{
+    text-decoration: none;
+}
+
 .main_grid {
     display: grid;
     grid-gap: 5px;
     
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, minmax(70px, auto));
+    grid-template-rows: repeat(15, minmax(70px, auto));
     
     max-width: 1700px;
     margin: auto;   /*Adds margin to both sides when window is too big. Centers itself.*/
@@ -74,10 +80,15 @@ body {
 }
 
 
+.highlight_word {
+    font-weight: bolder;
+    color: white;
+}
+
 /*--- Top Bar ------------------------------------------------------------*/
 /*------ Home Button(Image) */
 .top_home {
-    grid-column: 1/3;
+    grid-column: 1/4;
     min-height: 50px;
     max-height: 70px;
 }
@@ -91,7 +102,7 @@ body {
 /*--- Top Bar ------------------------------------------------------------*/
 /*------ Navigation Links */
 .top_nav {
-    grid-column: 3/7;
+    grid-column: 4/7;
     min-height: 50px;
     max-height: 70px;
 }
@@ -112,6 +123,7 @@ body {
 
 .top_nav p {
     display: block;
+    border-radius: 2px;
     color: var(--text_color);
     font-size: 120%;
     text-align: center;
@@ -119,11 +131,11 @@ body {
     margin-left: 5px;
     text-decoration: none;
     
-    transition: 0.8s;
+    transition: 0.6s;
 }
 
 .top_nav p:hover {
-    background-color: var(--highlight_color);
+    background-color: var(--text_color);
     color: var(--bg_color);
 }
 
@@ -131,6 +143,7 @@ body {
 /*--- Banner -------------------------------------------------------------*/
 .banner_l {
     grid-column: 1/4; /*Screen's LEFT side*/
+    max-width: 847px;
     max-height: 720px;
 }
 
@@ -146,7 +159,10 @@ body {
 
 .banner_r {
     grid-column: 4/7; /*Screen's RIGHT side*/
+    max-width: 847px;
     max-height: 720px;
+    
+    
 }
 
 .banner_r img {
@@ -157,33 +173,408 @@ body {
     display:block;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
-
-/*--- Content -------------------------------------------------------------*/
-.content_1 {
-    grid-column: 1/3;
-    color: #6d6dbb;
+/*--- Section_Title: Project -------------------------------------------------------------*/
+.title_project {
+    grid-column: 1/7;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.content_2 {
-    grid-column: 3/5;
+.section_img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*--- Project --------------------------------------------------------------------------*/
+.project {
+    grid-column: 1/7;
     color: var(--text_color);
+    
+    font-size: 170%;
+    line-height: 1.5;
+    
+    font-size: clamp(12px, 2vw, 28px); /*vw = based on "viewport" size.*/
 }
 
-.content_3 {
+
+/*--- Section_Title: Story -------------------------------------------------------------*/
+.title_story {
+    grid-column: 1/7;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*--- Section_Title: Story ----------------------------------------------------------*/
+.story_text {
+    grid-column: 1/5;
+    color: var(--text_color);
+    
+    font-size: 170%;
+    line-height: 1.5;
+    
+    font-size: clamp(12px, 2vw, 28px); /*vw = based on "viewport" size.*/
+}
+
+.story_sidepanel {
     grid-column: 5/7;
-    color: var(--text_color);
 }
 
+.story_sidepanel img {
+    grid-column: 5/7;
+    
+    /*max-height: 720px;*/
+    max-width: 100%;
+    height: auto;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/*--- Footer -------------------------------------------------------------*/
-.footer {
+/*--- Section_Title: Episodes ----------------------------------------------------------*/
+.title_episodes {
+    grid-column: 1/7;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*---------------------------------------------------------------------------------------*/
+/*--- Episodes --------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+.episodes_link_notice { /*This is the Pixiv link note.*/
     grid-column: 1/7;
     
     color: var(--text_color);
     
-    font-size: 80%;
-    line-height: 1.6;
+    font-size: 170%;
+    line-height: 1.5;
+    
+    font-size: clamp(12px, 2vw, 28px); /*vw = based on "viewport" size.*/
+}
+
+.episodes_link_thumbnails {
+    grid-column: 1/7;
+    display: grid;
+    grid-gap: 5px;
+    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: minmax(70px, auto);
+    
+    max-width: 1700px;
+    margin: auto;   /*Adds margin to both sides when window is too big. Centers itself.*/
+}
+
+.episodes_link_thumbnails img {
+    max-height: 720px;
+    max-width: 100%;
+    width: 90%;
+    height: auto;
+    
+    border: solid var(--bg_color);
+    border-radius: 12px;
+    padding: 5px;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    transition: border 0.5s;
+}
+
+.episodes_link_thumbnails img:hover {
+    border: solid #fff;
+    transition: border 0.5s;
+}
+
+.thumbnail_unreleased img {
+    border: solid var(--bg_color);
+    transition: border 0.1s;
+    opacity: 70%;
+}
+
+.thumbnail_unreleased img:hover {
+    border: solid var(--bg_color);
+}
+
+.episodes_link_thumbnails p {
+    color: var(--text_color);
+    
     text-align: center;
+    
+    font-size: 170%;
+    line-height: 1.5;
+    
+    font-size: clamp(12px, 2vw, 28px); /*vw = based on "viewport" size.*/
+}
+/*---------------------------------------------------------------------*/
+/*--- /Episodes END ---------------------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+/*--- Section_Title: Characters --------------------------------------------------------*/
+.title_characters {
+    grid-column: 1/7;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*--- Character_1 ------------------------------------------------------------*/
+/*------ Design */
+.character_1_image {    /*--- Grid Container*/
+    grid-column: 1/4;
+    grid-row: 11/13;
+    
+    max-width: 847px;
+    max-height: 1600px; /*Hardcoded FTW lol.*/
+    
+    align-self: center;
+}
+
+.character_1_image img{ /*--- Image inside container*/
+    max-width: 100%;
+    max-height: auto;
+    height: auto;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*------ Text Introduction */
+.character_1_introduction {
+    grid-column: 4/7;
+    grid-row: 11/12;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    max-height: 720px;
+    
+    
+}
+
+.char_name { /*Title: Character Name*/
+    /*font-size: 180%;*/
+    font-weight: 700;
+    color: var(--text_color);
+    
+    font-size: clamp(12px, 1vw, 20px); /*vw = based on "viewport" size.*/
+    
+    text-decoration: underline;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.char_intro {
+    /*grid-column: 3/7;
+    grid-row: 6/7;*/
+    
+    font-size: 170%;
+    
+    line-height: 1.5;
+    font-family: "merienda", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text_color);
+    
+    font-size: clamp(15px, 2vw, 28px); /*vw = based on "viewport" size.*/
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /*max-height: 720px;*/
+}
+
+
+/*------ Expressions */
+.character_1_expressions {  /*--- Grid Container*/
+    grid-column: 4/7;
+    grid-row: 12/13;
+    
+    max-width: 847px;
+    max-height: 720px;
+    
+    align-self: start;
+}
+
+.character_1_expressions img{ /*--- Image inside container*/
+    max-width: 100%;
+    height: auto;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+/*----------------------------------------------------------------------------*/
+/*--- Character_2 ------------------------------------------------------------*/
+/*------ Design */
+.character_2_image {    /*--- Grid Container*/
+    grid-column: 1/4;
+    grid-row: 13/15;
+    
+    max-width: 847px;
+    max-height: 1600px; /*Hardcoded FTW lol.*/
+    
+    align-self: center;
+}
+
+.character_2_image img{ /*--- Image inside container*/
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*------ Text Introduction */
+.character_2_introduction {
+    grid-column: 4/7;
+    grid-row: 13/14;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    max-height: 720px;
+}
+
+.char_name { /*Title: Character Name*/
+    font-size: 180%;
+    font-weight: 700;
+    color: var(--text_color);
+    
+    text-align: center;
+    font-size: clamp(16px, 4vw, 40px); /*vw = based on "viewport" size.*/
+    
+    text-decoration: underline;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.char_intro {
+    /*grid-column: 3/7;
+    grid-row: 6/7;*/
+    
+    font-size: 170%;
+    
+    /*line-height: 1.5;
+    font-family: "merienda", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;*/
+    color: var(--text_color);
+    
+    font-size: clamp(12px, 2vw, 28px); /*vw = based on "viewport" size.*/
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /*max-height: 720px;*/
+}
+
+
+/*------ Expressions */
+.character_2_expressions {  /*--- Grid Container*/
+    grid-column: 4/7;
+    grid-row: 14/15;
+    
+    max-width: 847px;
+    max-height: 720px;
+}
+
+.character_2_expressions img{ /*--- Image inside container*/
+    max-width: 100%;
+    height: auto;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*--- Footer -------------------------------------------------------------*/
+.footer_credits{
+    grid-column: 1/4;
+    
+    color: var(--text_color);
+    
+    /*font-size: 80%;*/
+    line-height: 1.6;
+    
+    font-size: clamp(60%, 2vw, 80%); /*vw = based on "viewport" size.*/
+}
+
+.footer_credits ul{
+    list-style-type: none;  /*This "hides" the bullet icons.*/
+    padding-left: 10px;
+}
+
+.footer_credits_site_by{
+    float: left;
+    padding-right: 12px;
+}
+
+.footer_privacy_policy{
+    float: left;
+}
+
+.footer_privacy_policy p {
+    border-radius: 3px;
+    text-align: center;
+    padding: 0px 6px; /*vertical, horizontal*/
+    color: var(--text_color);
+    text-decoration: none;
+}
+
+.footer_privacy_policy p:hover {
+    background-color: var(--text_color);
+    color: var(--bg_color);
+    
+    transition: 0.6s;
+}
+
+
+
+
+
+.footer_links{
+    grid-column: 4/7;
+    display: block;
+
+    margin: auto 10% auto auto;
+    max-height: 70px;
+}
+
+.footer_links img{
+    border: solid var(--bg_color);
+    border-radius: 7px;
+    height: 20px;
+    max-height: 20px;
+    padding: 5px;
+    
+    transition: 0.2s;
+}
+
+.footer_links img:hover{
+    border: solid var(--text_color);
 }
